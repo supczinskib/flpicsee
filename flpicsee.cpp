@@ -1202,6 +1202,27 @@ public:
         if (hscrollbar.visible()) vh -= effective_scrollbar_size();
         return (vh > 0) ? vh : 1;
     }
+
+    void draw(void) {
+        Fl_Scroll::draw();
+
+        /*
+         * FLTK leaves the square between the vertical and horizontal
+         * scrollbars as part of the scroll widget background.  The image
+         * area can intentionally be dark, but this corner visually belongs
+         * to the scrollbar troughs.  Paint only that corner when both
+         * scrollbars are visible.
+         */
+        if (scrollbar.visible() && hscrollbar.visible()) {
+            int sb = effective_scrollbar_size();
+            if (sb > 0) {
+                Fl_Color c = hscrollbar.color();
+                if (app_colors.have_scrollbar_background) c = app_colors.scrollbar_background;
+                fl_color(c);
+                fl_rectf(x() + w() - sb, y() + h() - sb, sb, sb);
+            }
+        }
+    }
 };
 
 class Fl_Pic_Window : public Fl_Window {
