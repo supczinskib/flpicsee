@@ -1770,7 +1770,13 @@ void Fl_Pic_Window::do_menu(void) {
        Add one measured row only for fullscreen; leave normal window
        placement unchanged. v67 lowers the fullscreen popup by another
        24 px because v66 still opened it slightly too high. */
-    int popup_x = x() + Fl::event_x();
+    /* popup() is already evaluated in the current FLTK event/window
+       context.  Y has intentionally been kept local since v49; X must
+       use the same coordinate system.  Adding window x() here double-counts
+       the window position on IceWM/Xfbdev.  With narrow menu labels this was
+       less visible, but the wider Chinese popup makes FLTK clamp/shift the
+       menu unpredictably depending on the window position. */
+    int popup_x = Fl::event_x();
     int popup_base_y = fullscreen_view ? (popup_menu_sample_row_h() + 24) : 0;
     int popup_y = popup_menu_local_y_fit(popup_base_y);
 
