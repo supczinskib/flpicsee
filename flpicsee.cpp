@@ -2577,6 +2577,8 @@ static void MenuCB(Fl_Widget* window_p, void *userdata)
 
 int main(int argc, char** argv) 
 {
+    Fl_Window::default_xclass("flpicsee");
+
     int a = 1;
     char fullfilename[256] = {0};
 #ifdef INCL_PAGING
@@ -2675,6 +2677,7 @@ int main(int argc, char** argv)
     }
     
     MainWnd_p->setup();
+    MainWnd_p->xclass("flpicsee");
     if (HeadImgItem_p->im_orig_p) {
         Running = 1;
     }
