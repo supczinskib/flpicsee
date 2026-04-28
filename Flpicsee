@@ -1,0 +1,22 @@
+Flpicsee.scheme:		gtk+
+Flpicsee.font:			DejaVu Sans:style=Book
+Flpicsee.boldFont:		DejaVu Sans:style=Bold
+Flpicsee.monoFont:		DejaVu Sans Mono:style=Book
+Flpicsee.fontSize:		11
+Flpicsee.messageFontSize:	11
+Flpicsee.pagingButtonFontSize:	14
+
+Flpicsee.foreground:		#ffffff
+Flpicsee.selection:		#ec7b0a
+Flpicsee.dialogBackground:	#3c3b37
+Flpicsee.fieldBackground:	#202018
+Flpicsee.imageBackground:	#000000
+Flpicsee.menuBackground:	#3c3b37
+Flpicsee.menuForeground:	#ffffff
+Flpicsee.menuSelection:		#ec7b0a
+Flpicsee.inputSelection:	#807d78
+Flpicsee.browserSelection:	#ec7b0a
+Flpicsee.scrollbarBackground:	#2f2e2b
+Flpicsee.scrollbarArrow:	#202018
+Flpicsee.buttonBackground:	#3c3b37
+Flpicsee.buttonForeground:	#ffffff
